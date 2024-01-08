@@ -12,7 +12,7 @@ include
 lib
 LightGBM
 logs
-models
+/models
 research
 share
 src/pipelines
