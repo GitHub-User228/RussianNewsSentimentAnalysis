@@ -1,0 +1,21 @@
+model: LogisticRegression
+sampler: TPESampler
+default:
+    penalty: 'l2'
+grid:
+    # penalty:
+    #     sampling_method: suggest_categorical
+    #     params:
+    #         choices: ['l1', 'l2']
+    C: 
+        sampling_method: suggest_float
+        params:
+            low: 0.0001
+            high: 100
+            log: True
+    # l1_ratio: 
+    #     sampling_method: suggest_float
+    #     params:
+    #         low: 0
+    #         high: 1
+    #         log: False

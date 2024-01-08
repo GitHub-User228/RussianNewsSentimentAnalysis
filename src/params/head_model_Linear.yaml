@@ -1,0 +1,27 @@
+name: Linear
+main_model_class: CustomLinear
+params:
+    input_dim: 1024
+    hidden_layers: [512, 128, 64]
+    p: 0.1
+training_configs:
+    n_epochs: 1
+    batch_size: 1024
+    loss_function: CrossEntropyLoss
+    optimizer: Adam
+    learning_rate: 0.00001
+    random_state: 42
+    scheduler: 
+    scheduler_params:
+    use_callback: True
+    eval_steps: 200
+    eval_batch_size: 1024
+    overwrite_existing_callback: True
+    checkpoint_each_epoch: True
+    metrics_names:
+        - accuracy
+        - balanced_accuracy
+        - precision
+        - recall
+        - f1
+callback_logdir: logs/callback_head_model_Linear

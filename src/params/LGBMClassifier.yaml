@@ -1,0 +1,51 @@
+model: LGBMClassifier
+sampler: TPESampler
+default:
+    seed: 42
+    objective: 'binary'
+    max_iter: 100
+    num_threads: 16
+    device_type: cpu
+    bagging_seed: 42
+grid:
+    learning_rate: 
+        sampling_method: suggest_loguniform
+        params:
+            low: 0.001
+            high: 1
+    min_data_in_leaf: 
+        sampling_method: suggest_int
+        params:
+            low: 100
+            high: 1000
+    num_leaves: 
+        sampling_method: suggest_int
+        params:
+            low: 2
+            high: 8
+    max_depth:
+        sampling_method: suggest_categorical
+        params:
+            choices: [1, 2, 3]
+    bagging_fraction:
+        sampling_method: suggest_float
+        params:
+            low: 0.5
+            high: 1
+            log: False 
+    bagging_freq:
+        sampling_method: suggest_int
+        params:
+            low: 5
+            high: 20
+            log: False    
+    reg_lambda: 
+        sampling_method: suggest_loguniform
+        params:
+            low: 0.0001
+            high: 100
+    reg_alpha: 
+        sampling_method: suggest_loguniform
+        params:
+            low: 0.0001
+            high: 100

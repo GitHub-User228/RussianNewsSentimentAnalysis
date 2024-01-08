@@ -1,0 +1,33 @@
+model: XGBClassifier
+sampler: TPESampler
+default:
+    device: cuda
+    seed: 42
+    objective: 'binary:logistic'
+    eval_metric: logloss
+grid:
+    learning_rate: 
+        sampling_method: suggest_loguniform
+        params:
+            low: 0.001
+            high: 1
+    max_depth: 
+        sampling_method: suggest_categorical
+        params:
+            choices: [1, 2, 3]
+    subsample:
+        sampling_method: suggest_float
+        params:
+            low: 0.5
+            high: 1
+            log: False
+    reg_lambda: 
+        sampling_method: suggest_loguniform
+        params:
+            low: 0.0001
+            high: 100
+    reg_alpha: 
+        sampling_method: suggest_loguniform
+        params:
+            low: 0.0001
+            high: 100

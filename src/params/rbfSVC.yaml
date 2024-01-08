@@ -1,0 +1,17 @@
+model: SVC
+sampler: TPESampler
+default: 
+    kernel: 'rbf'
+    random_state: 42
+    max_iter: 100
+grid:
+    gamma:
+        sampling_method: suggest_categorical
+        params:
+            choices: ['scale', 'auto']   
+    C: 
+        sampling_method: suggest_float
+        params:
+            low: 0.00001
+            high: 100
+            log: True

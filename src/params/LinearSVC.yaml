@@ -1,0 +1,14 @@
+model: LinearSVC
+sampler: TPESampler
+default: 
+    penalty: 'l2'
+    dual: False
+    random_state: 42
+    max_iter: 100
+grid:
+    C: 
+        sampling_method: suggest_float
+        params:
+            low: 0.00001
+            high: 100
+            log: True

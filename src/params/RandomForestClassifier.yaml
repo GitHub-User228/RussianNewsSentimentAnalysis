@@ -1,0 +1,13 @@
+model: RandomForestClassifier
+sampler: GridSampler
+default:
+    random_state: 42
+grid:
+    n_estimators: 
+        sampling_method: suggest_categorical
+        params:
+            choices: [20, 30, 40, 50, 60, 70, 80]
+    max_depth: 
+        sampling_method: suggest_categorical
+        params:
+            choices: [1, 2, 3]
