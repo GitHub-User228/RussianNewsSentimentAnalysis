@@ -97,9 +97,9 @@ predicting:
     embedding_file_size: 51200
     embedding_ids: [0]
     head_models:
-        - final_head_model_MHSA_STCNN_BiRNN
-        - final_head_model_MHSA_STCNN_BiLSTM
-        - final_head_model_MHSA_STCNN_GRU
+        - head_model_FINAL_MHSA_STCNN_BiRNN
+        - head_model_FINAL_MHSA_STCNN_BiLSTM
+        - head_model_FINAL_MHSA_STCNN_GRU
     second_level_model: LGBMClassifier
     metrics_names:
         - accuracy
